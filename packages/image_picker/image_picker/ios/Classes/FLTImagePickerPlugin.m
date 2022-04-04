@@ -289,11 +289,11 @@ typedef NS_ENUM(NSInteger, ImagePickerClassType) { UIImagePickerClassType, PHPic
 }
 
 - (void)checkPhotoAuthorizationWithImagePicker:(UIImagePickerController *)imagePickerController {
-   [self showPhotoLibrary:UIImagePickerClassType];
+   [self showPhotoLibraryWithImagePicker:imagePickerController];
 }
 
 - (void)checkPhotoAuthorizationForAccessLevel API_AVAILABLE(ios(14)) {
- [self showPhotoLibrary:PHPickerClassType];
+ [self showPhotoLibraryWithPHPicker:self->_pickerViewController];
 }
 
 - (void)errorNoCameraAccess:(AVAuthorizationStatus)status {
